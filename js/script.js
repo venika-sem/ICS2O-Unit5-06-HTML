@@ -15,14 +15,29 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function determines the type of triangle
+ * This function does a multiplication loop.
  */
-
-function multiplyBy()
+function multiplyBy() {
   // input
-  var firstInteger = document.getElementById("firstInteger").value;
-  var secondInteger = document.getElementById("secondInteger").value;
+  var firstInteger = document.getElementById("first-integer").value
+  var secondInteger = document.getElementById("second-integer").value
 
-  // process and output
-  document.getElementById("answer").innerHTML = firstInteger * secondInteger;
+  // process
+  let counter = 0
+  var answer = 0
+  const negativeOne = -1
+  var firstIntegerAsInt = parseInt(firstInteger)
+
+  while (counter < secondInteger) {
+    console.log("Once through loop:" + counter)
+    answer += firstIntegerAsInt
+    counter++
+  }
+
+  if (secondInteger < 0) {
+    answer = (firstInteger * negativeOne) * (secondInteger * negativeOne)
+  }
+
+  // output
+  document.getElementById("answer").innerHTML = "The answer is " + (answer)
 }

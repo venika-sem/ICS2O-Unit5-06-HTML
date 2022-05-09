@@ -17,22 +17,12 @@ if (navigator.serviceWorker) {
 /**
  * This function determines the type of triangle
  */
-function check() {
+
+function multiplyBy()
   // input
-  var firstLength = document.getElementById("first-dimension").value
-  var secondLength = document.getElementById("second-dimension").value
-  var thirdLength = document.getElementById("third-dimension").value
+  var firstInteger = document.getElementById("firstInteger").value;
+  var secondInteger = document.getElementById("secondInteger").value;
 
   // process and output
-  if ((firstLength <= 0) || (secondLength <= 0) || (thirdLength <= 0)) {
-    document.getElementById("answer").innerHTML = 'Please input a positive number.'
-  } else {
-    if ((firstLength == secondLength) && (secondLength == thirdLength)) {
-      document.getElementById("answer").innerHTML = 'It is an Equilateral Triangle!'
-    } else if ((firstLength == secondLength) || (firstLength == thirdLength) || (secondLength == thirdLength)) {
-      document.getElementById("answer").innerHTML = 'It is an Isosceles Triangle!'
-    } else {
-      document.getElementById("answer").innerHTML = 'It is a Scalene Triangle!'
-    }    
-  }
+  document.getElementById("answer").innerHTML = firstInteger * secondInteger;
 }

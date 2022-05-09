@@ -19,25 +19,35 @@ if (navigator.serviceWorker) {
  */
 function multiplyBy() {
   // input
-  var firstInteger = document.getElementById("first-integer").value
-  var secondInteger = document.getElementById("second-integer").value
+  const firstInteger = parseInt(document.getElementById('first-integer').value)
+	const secondInteger = parseInt(document.getElementById('second-integer').value)
 
   // process
-  let counter = 0
+  var addedNumber = 0
   var answer = 0
-  const negativeOne = -1
-  var firstIntegerAsInt = parseInt(firstInteger)
-
-  while (counter < secondInteger) {
-    console.log("Once through loop:" + counter)
-    answer += firstIntegerAsInt
-    counter++
-  }
-
-  if (secondInteger < 0) {
-    answer = (firstInteger * negativeOne) * (secondInteger * negativeOne)
+  
+   if (firstInteger > 0 && secondInteger > 0) {
+    while (addedNumber < secondInteger) {
+      addedNumber = addedNumber + 1;
+      answer = answer + firstInteger;
+    }
+  } else if (firstInteger < 0 && secondInteger < 0) {
+    while (addedNumber > secondInteger) {
+      addedNumber = addedNumber - 1;
+      answer = answer - firstInteger;
+    }
+  } else if (firstInteger > 0 && secondInteger < 0) {
+    while (addedNumber > secondInteger) {
+      addedNumber = addedNumber - 1;
+      answer = answer - firstInteger;
+    }
+  } else if (firstInteger < 0 && secondInteger > 0) {
+    while (addedNumber < secondInteger) {
+      addedNumber = addedNumber + 1;
+      answer = answer + firstInteger;
+    }
   }
 
   // output
-  document.getElementById("answer").innerHTML = "The answer is " + (answer)
+  document.getElementById('answer').innerHTML = firstInteger + " x " + addedNumber + " = " + answer;
 }
